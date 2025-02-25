@@ -1,0 +1,8 @@
+MMLU Task Accuracy (task=high_school_european_history): 0.5515151515151515
+MMLU Task Accuracy (task=business_ethics): 0.36
+MMLU Task Accuracy (task=clinical_knowledge): 0.4188679245283019
+MMLU Task Accuracy (task=medical_genetics): 0.42
+MMLU Task Accuracy (task=high_school_us_history): 0.5245098039215687
+MMLU Task Accuracy (task=high_school_physics): 0.31788079470198677
+MMLU Task Accuracy (task=high_school_world_history): 0.5611814345991561
+MMLU Task Accuracy (task=virology): 0.39759036144578314

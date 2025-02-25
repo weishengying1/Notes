@@ -1,0 +1,1 @@
+text-generation-launcher --model-id /mnt/shared/maas/ai_story/llama2_as_def_en_12b_v5_1205 --sharded true --port 8000 --max-best-of 1 --max-input-tokens 8192 --max-total-tokens 8448 --max-batch-total-tokens 8448 --cuda-graphs "1,2,4,8,16,32"
