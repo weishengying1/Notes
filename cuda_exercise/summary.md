@@ -116,3 +116,9 @@ __global__ void gemm(const float* a, const float* b, float* c, int M, int N, int
 }
 ```
 
+
+
+# reduce sum
+/*
+input
+*/
