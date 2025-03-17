@@ -32,14 +32,14 @@ __global__ void transpose_naive(const float* A, float* B, int M, int N) {
     const int y = by * Tile_Size + ty;
 
     __shared__ float smem[Tile_Size][Tile_Size];
-    if(idx < N && row < idy) {
+    if(x < N && y < M) {
         smem[ty][tx] = A[y * N + x]; //(by * Tile_Size + ty) * N + bx * Tile_Size + tx
     }
     __sythreads();
 
     x = by * Tile_Size + tx;
     y = bx * Tile_Size + ty;
-    if(idx < M && idy < N) {
+    if(x < M && y < N) {
         B[y * M + x] = smem[tx][ty]
     }
 }

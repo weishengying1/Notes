@@ -6,6 +6,7 @@
 #include <sys/time.h>
 
 #define BLOCK_SIZE 32
+#define THREAD_PER_BLOCK 1024
 
 __global__ void gemm(const float* a, const float* b, float* c, int M, int N, int K) {
     __shared__ float sA[BLOCK_SIZE][BLOCK_SIZE];

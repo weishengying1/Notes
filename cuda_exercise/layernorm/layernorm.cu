@@ -50,13 +50,13 @@ __global__ void layernorm(float* in, int M, int K) {
     __shared__ s_variance = 0.f;
 
     // 计算 sum
-    float sum = block_reduce_sum<THREADS_PER_BLOCK>(val); // 只有第一个 warp 才能得到
+    float sum = block_reduce_sum<THREADS_PER_BLOCK>(val);
     if(tid == 0) s_mean = sum / K;
     __syncthreads();
 
     // 计算标准差
     float variance = (var - mean)(var - mean)
-    variance = block_reduce_sum<THREADS_PER_BLOCK>(variance); // 只有第一个 warp 才能得到
+    variance = block_reduce_sum<THREADS_PER_BLOCK>(variance);
     if(tid == 0) s_variance = rsqrtf(variance / K);
     __syncthreads();
 
